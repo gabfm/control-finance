@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Finance</title>
+    <link
+      rel="shortcut icon"
+      href="./src/assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta
+      name="description"
+      content="Control Finance - Seu controle financeiro"
+    />
+    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+    <link rel="stylesheet" href="./src/styles/modal.css" />
+    <link rel="stylesheet" href="./src/styles/index.css" />
+  </head>
+  <body class="container">
+    <header class="main__title">
+      <h2><span style="color: var(--color-brand-1);">Control</span> Finance</h2>
+      <button class="button__register--main">Registrar novo valor</button>
+    </header>
+    <main id="app">
+      <section class="menu__container">
+        <h3>Resumo financeiro</h3>
+        <div class="menu__filter">
+          <button class="filter__button--all" >Todos</button>
+          <button class="filter__button--entry" >Entradas</button>
+          <button class="filter__button--exit" >Saídas</button>
+        </div>
+      </section>
+      <p class="sum__values">Soma dos valores <span class="sum_all--Values">R$ 0,00</span></p>
+
+      <div class="empty__container">
+        <p>Nenhum valor cadastrado</p>
+        <button id="button__register--secundary">Registrar novo valor</button>
+      </div>
+
+      <ul class="main__list"></ul>
+
+      </main>
+      <dialog class="modal__controller">
+          <header class="header__modal">
+            <h3>Registro de valor</h3>
+            <button class="close-modal">X</button>
+          </header>
+          <main class="content__modal">
+            <p>Digite o valor e em seguida aperte no botão referenta ao tipo do valor</p>
+            <form class="">
+              <h3>Valor</h3>
+              <input class="new__value" type="number" name="value" placeholder="R$ 00,00">
+              <span>Tipo de Valor</span>
+              <div class="new__value--id">
+                <input type="radio"hidden id="0"  name="categoryID" value="0">
+                <label class="value_label new__entry" id="0" for="0">Entrada</label><br>
+                <input type="radio"hidden id="1"  name="categoryID" value="1">
+                <label class="value_label new__exit" id="1" for="1">Saída</label><br>  
+              </div>
+            </form>
+            <div class="modal__footer">
+              <button class="cancel-modal butto-modal" type="submit">Cancelar</button>
+              <button type="submit" class="submit__button butto-modal">Inserir valor</button>
+            </div>
+
+          </main>
+      </dialog>
+    <script src="./src/scripts/valuesData.js"></script>
+    <script src="./src/scripts/modal.js"></script>
+    <script src="./src/scripts/index.js"></script>
+    <script src="./src/scripts/filter.js"></script>
+  </body>
+</html>
